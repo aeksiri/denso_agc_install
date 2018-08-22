@@ -168,6 +168,8 @@ git clone https://github.com/linorobot/imu_calib.git
 git clone https://github.com/linorobot/lino_pid.git
 git clone https://github.com/linorobot/lino_udev.git
 
+git clone https://github.com/aeksiri/simple_controller.git
+
 cd $HOME/$WORKSPACE/src/linorobot
 TRAVIS_BRANCH="echo $TRAVIS_BRANCH"
 if [ "$TRAVIS_BRANCH" = "devel" ]; then git checkout devel; fi
