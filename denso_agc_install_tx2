@@ -149,13 +149,13 @@ else
     elif [[ "$SENSOR" == "sick-tim310" ]]
         then
             cd $HOME/$WORKSPACE/src
-            git clone https://github.com/uos/sick_tim.git
+            git clone -b kinetic --single-branch https://github.com/uos/sick_tim.git
     elif [[ "$SENSOR" == "sick-tim310_kinect" ]]
         then
             sudo apt-get install -y ros-$ROSDISTRO-freenect-launch
             sudo apt-get install -y ros-$ROSDISTRO-depthimage-to-laserscan
             cd $HOME/$WORKSPACE/src
-            git clone https://github.com/uos/sick_tim.git
+            git clone -b kinetic --single-branch https://github.com/uos/sick_tim.git
     fi
 
     if [[ "$BASE" == "ackermann" ]]
