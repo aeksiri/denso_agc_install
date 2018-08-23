@@ -148,14 +148,29 @@ else
 
     elif [[ "$SENSOR" == "sick-tim310" ]]
         then
+	    sudo apt-get install -y ros-kinetic-sick-tim
+	
             cd $HOME/$WORKSPACE/src
             git clone -b kinetic --single-branch https://github.com/uos/sick_tim.git
+	    
+	    cd $HOME/$WORKSPACE/src/sick_tim/udev
+	    sudo cp 81-sick-tim3xx.rules /etc/udev/rules.d/
+            sudo udevadm control --reload-rules
+	    
+	    sudo usermod -a -G plugdev nvidia
+	    
     elif [[ "$SENSOR" == "sick-tim310_kinect" ]]
         then
             sudo apt-get install -y ros-$ROSDISTRO-freenect-launch
             sudo apt-get install -y ros-$ROSDISTRO-depthimage-to-laserscan
             cd $HOME/$WORKSPACE/src
             git clone -b kinetic --single-branch https://github.com/uos/sick_tim.git
+	    
+	    cd $HOME/$WORKSPACE/src/sick_tim/udev
+	    sudo cp 81-sick-tim3xx.rules /etc/udev/rules.d/
+            sudo udevadm control --reload-rules
+	    
+	    sudo usermod -a -G plugdev nvidia
     fi
 
     if [[ "$BASE" == "ackermann" ]]
