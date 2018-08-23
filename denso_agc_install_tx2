@@ -157,7 +157,8 @@ else
 	    sudo cp 81-sick-tim3xx.rules /etc/udev/rules.d/
             sudo udevadm control --reload-rules
 	    
-	    sudo usermod -a -G plugdev nvidia
+	    sudo usermod -a -G plugdev $USER
+	    sudo usermod -a -G dialout $USER
 	    
     elif [[ "$SENSOR" == "sick-tim310_kinect" ]]
         then
@@ -170,7 +171,8 @@ else
 	    sudo cp 81-sick-tim3xx.rules /etc/udev/rules.d/
             sudo udevadm control --reload-rules
 	    
-	    sudo usermod -a -G plugdev nvidia
+	    sudo usermod -a -G plugdev $USER
+	    sudo usermod -a -G dialout $USER
     fi
 
     if [[ "$BASE" == "ackermann" ]]
