@@ -113,7 +113,7 @@ sudo apt-get install -y ros-$ROSDISTRO-gmapping
 sudo apt-get install -y ros-$ROSDISTRO-map-server
 sudo apt-get install -y ros-$ROSDISTRO-navigation
 
-if [[ "$3" == "test" ]]
+if [[ "$4" == "test" ]]
     then
         sudo apt-get install -y ros-$ROSDISTRO-xv-11-laser-driver
         sudo apt-get install -y ros-$ROSDISTRO-freenect-launch
@@ -123,6 +123,9 @@ if [[ "$3" == "test" ]]
 
         cd $HOME/$WORKSPACE/src
         git clone https://github.com/robopeak/rplidar_ros.git
+	
+	cd $HOME/$WORKSPACE/src
+        git clone https://github.com/uos/sick_tim.git
 
 else
     if [[ "$SENSOR" == "xv11" ]]
