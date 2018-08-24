@@ -207,7 +207,10 @@ cd $HOME/$WORKSPACE/src/linorobot
 TRAVIS_BRANCH="echo $TRAVIS_BRANCH"
 if [ "$TRAVIS_BRANCH" = "devel" ]; then git checkout devel; fi
 
+
 rm -rf $HOME/$WORKSPACE/src/linorobot/teensy/firmware/lib/ros_lib/lino_msgs
+
+rm -rf /tmp/ros_lib
 rosrun rosserial_arduino make_libraries.py /tmp
 cp -r /tmp/ros_lib/lino_msgs/ $HOME/$WORKSPACE/src/linorobot/teensy/firmware/lib/ros_lib/
 
