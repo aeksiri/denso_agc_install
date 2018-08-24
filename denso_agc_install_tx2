@@ -180,7 +180,7 @@ else
 	    sudo usermod -a -G plugdev $USER
 	    sudo usermod -a -G dialout $USER
 	    
-	    SENSOR = sick_tim310
+	    SENSOR=sick_tim310
     fi
 
     if [[ "$BASE" == "ackermann" ]]
