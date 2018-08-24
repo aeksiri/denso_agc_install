@@ -44,8 +44,8 @@ if [ "$4" != "test" ]
                 echo "rplidar"
                 echo "kinect"
                 echo "realsense"
-		echo "sick-tim310"
-                echo "sick-tim310_kinect"
+		echo "sick_tim310"
+                echo "sick_tim310_kinect"
                 echo
                 exit 1
         elif [ "$3" == "" ]
@@ -152,7 +152,7 @@ else
             sudo apt-get install -y ros-$ROSDISTRO-depthimage-to-laserscan
 	    sudo apt-get install -y ros-$ROSDISTRO-openni-launch
 
-    elif [[ "$SENSOR" == "sick-tim310" ]]
+    elif [[ "$SENSOR" == "sick_tim310" ]]
         then
 	    sudo apt-get install -y ros-kinetic-sick-tim
 	
@@ -166,7 +166,7 @@ else
 	    sudo usermod -a -G plugdev $USER
 	    sudo usermod -a -G dialout $USER
 	    
-    elif [[ "$SENSOR" == "sick-tim310_kinect" ]]
+    elif [[ "$SENSOR" == "sick_tim310_kinect" ]]
         then
             sudo apt-get install -y ros-kinetic-sick-tim
 	    
@@ -183,6 +183,8 @@ else
 	    
 	    sudo usermod -a -G plugdev $USER
 	    sudo usermod -a -G dialout $USER
+	    
+	    SENSOR=sick_tim310
     fi
 
     if [[ "$BASE" == "ackermann" ]]
