@@ -135,6 +135,7 @@ else
         then
             sudo apt-get install -y ros-$ROSDISTRO-freenect-launch
             sudo apt-get install -y ros-$ROSDISTRO-depthimage-to-laserscan
+	    sudo apt-get install -y ros-$ROSDISTRO-openni-launch
 
     elif [[ "$SENSOR" == "rplidar" ]]
         then
@@ -145,6 +146,7 @@ else
         then
             sudo apt-get install -y ros-$ROSDISTRO-realsense-camera
             sudo apt-get install -y ros-$ROSDISTRO-depthimage-to-laserscan
+	    sudo apt-get install -y ros-$ROSDISTRO-openni-launch
 
     elif [[ "$SENSOR" == "sick-tim310" ]]
         then
@@ -164,8 +166,10 @@ else
         then
             sudo apt-get install -y ros-$ROSDISTRO-freenect-launch
             sudo apt-get install -y ros-$ROSDISTRO-depthimage-to-laserscan
+	    sudo apt-get install -y ros-$ROSDISTRO-openni-launch
+	    
             cd $HOME/$WORKSPACE/src
-            git clone -b kinetic --single-branch https://github.com/uos/sick_tim.git
+            git clone -b $ROSDISTRO --single-branch https://github.com/uos/sick_tim.git
 	    
 	    cd $HOME/$WORKSPACE/src/sick_tim/udev
 	    sudo cp 81-sick-tim3xx.rules /etc/udev/rules.d/
