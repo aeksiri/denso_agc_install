@@ -115,6 +115,8 @@ sudo apt-get install -y ros-$ROSDISTRO-gmapping
 sudo apt-get install -y ros-$ROSDISTRO-map-server
 sudo apt-get install -y ros-$ROSDISTRO-navigation
 
+sudo apt-get install -y ros-$ROSDISTRO-rqt*
+
 if [[ "$4" == "test" ]]
     then
         sudo apt-get install -y ros-$ROSDISTRO-xv-11-laser-driver
