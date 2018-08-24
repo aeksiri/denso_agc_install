@@ -35,7 +35,7 @@ if [ "$4" != "test" ]
                 echo
                 exit 1
 
-        elif [[ "$2" != "xv11" && "$2" != "rplidar" && "$2" != "kinect" && "$2" != "realsense" && "$2" != "sick-tim310" && "$2" != "sick-tim310_kinect" ]]
+        elif [[ "$2" != "xv11" && "$2" != "rplidar" && "$2" != "kinect" && "$2" != "realsense" && "$2" != "sick_tim310" && "$2" != "sick_tim310_kinect" ]]
             then
                 echo "Invalid linorobot sensor: $2"
                 echo
