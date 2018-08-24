@@ -154,6 +154,8 @@ else
 
     elif [[ "$SENSOR" == "sick-tim310" ]]
         then
+	    sudo apt-get install -y ros-kinetic-sick-tim
+	
             cd $HOME/$WORKSPACE/src
             git clone -b kinetic --single-branch https://github.com/uos/sick_tim.git
 	    
@@ -166,7 +168,9 @@ else
 	    
     elif [[ "$SENSOR" == "sick-tim310_kinect" ]]
         then
-            sudo apt-get install -y ros-$ROSDISTRO-freenect-launch
+            sudo apt-get install -y ros-kinetic-sick-tim
+	    
+	    sudo apt-get install -y ros-$ROSDISTRO-freenect-launch
             sudo apt-get install -y ros-$ROSDISTRO-depthimage-to-laserscan
 	    sudo apt-get install -y ros-$ROSDISTRO-openni-launch
 	    
