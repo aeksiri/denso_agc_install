@@ -19,7 +19,7 @@ if [ "$4" != "test" ]
             then
                 echo "No arguments provided"
                 echo
-                echo "Example: $ ./denso_agc_install.sh 2wd sick-tim310_kinect denso_agcxx_ws"
+                echo "Example: $ ./denso_agc_install.sh 2wd sick_tim310_kinect denso_agcxx_ws"
                 echo
                 exit 1
                 
